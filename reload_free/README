@@ -1,0 +1,2 @@
+gcc -fPIC -shared -o my_mem.so my_mem.c 
+/bin/env LD_PRELOAD=./my_mem.so ./a.out 
