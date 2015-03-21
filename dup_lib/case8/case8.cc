@@ -4,8 +4,8 @@
 #include <cstdio>
 
 /*
- * ./case7.out ./libmidware.so DONT coredump
- * same so only load once
+ * ./case8.out ./libmidware.so DONT coredump
+ * static linked
  */
 
 int main(int argc, char **argv)
