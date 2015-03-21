@@ -7,7 +7,9 @@
 
 int main(int argc, char **argv)
 {
-  my_string_t tmp("hello, world");
-  tmp.print();
+  my_string_t *local_str = const_cast<my_string_t*>(&global_my_string);
+  local_str->set("mydata");
+  local_str->print();
+  print_global_string();
   return 0;
 }

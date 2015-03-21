@@ -15,9 +15,9 @@ my_string_t::~my_string_t()
   printf("my_string_t dtor(%p) (%s)\n", this, str_.c_str());
 }
 
-void my_string_t::print()
+void my_string_t::print() const
 {
-  printf("%s\n", str_.c_str());
+  printf("str(%p) = %s\n", this, str_.c_str());
 }
 
 void my_string_t::set(const char *s)
@@ -32,6 +32,11 @@ extern "C" {
   my_string_t* create_my_string()
   {
     return new my_string_t;
+  }
+
+  void print_global_string()
+  {
+    global_my_string.print();
   }
 
 #ifdef __cplusplus

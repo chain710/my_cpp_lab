@@ -9,7 +9,7 @@ class my_string_t
   my_string_t(const char* s = "");
   ~my_string_t();
 
-  void print();
+  void print() const;
   void set(const char* s);
  private:
   std::string str_;
@@ -28,6 +28,8 @@ extern "C" {
 #endif
 
   my_string_t* create_my_string();
+
+  void print_global_string();
 
 #ifdef __cplusplus
 }

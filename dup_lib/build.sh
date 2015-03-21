@@ -39,4 +39,17 @@ g++ -g -Wall -shared -o libmy_string_b.so  my_string.o
 
 g++ -g -Wall -o case4.out case4.cc -lmy_string_a -ldl -I./ -L./
 
+cd $DIRNAME/case5
 
+g++ -g -Wall -fPIC -c -o my_string.o my_string.cc  -I./
+g++ -g -Wall -shared -o libmy_string.so  my_string.o
+
+g++ -g -Wall -o case5.out case5.cc -lmy_string -I./ -L./
+
+cd $DIRNAME/case6
+
+g++ -g -Wall -fPIC -c -o my_string.o my_string.cc  -I./
+g++ -g -Wall -shared -o libmy_string_a.so  my_string.o
+g++ -g -Wall -shared -o libmy_string_b.so  my_string.o
+
+g++ -g -Wall -o case6.out case6.cc -lmy_string_a -ldl -I./ -L./
