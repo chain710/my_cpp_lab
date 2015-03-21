@@ -75,4 +75,16 @@ g++ -g -Wall -shared -o libmidware.so  midware.o -lmy_string -L./
 
 g++ -g -Wall -o case8.out case8.cc -lmy_string -ldl -I./ -L./
 
+cd $DIRNAME/case9
 
+g++ -g -Wall -fPIC -c -o my_string.o my_string.cc  -I./
+ar rcs libmy_string_static.a my_string.o
+g++ -g -Wall -shared -o libmy_string.so  my_string.o
+
+g++ -g -Wall -fPIC -c -o midware.o midware.cc  -I./
+g++ -g -Wall -shared -o libmidware.so  midware.o -lmy_string_static -L./
+g++ -g -Wall -shared -o libmidware_plugin.so  midware.o -lmy_string -L./
+
+#put -lmy_string_static before -lmidware will cause coredump!
+#g++ -g -Wall -o case9.out case9.cc -lmy_string_static -lmidware  -ldl -I./ -L./
+g++ -g -Wall -o case9.out case9.cc -lmidware -lmy_string_static  -ldl -I./ -L./

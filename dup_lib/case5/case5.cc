@@ -1,14 +1,8 @@
 #include <my_string.h>
 
 /*
- * this case MAY coredump
- * because 2 global_my_string is inited in the same address
- * one in lib_my_string.so, another in case1 binary
- * call routine:
- *  _dl_start_users -> global str in so
- *  __libc_start_main -> global str in binary
- * cause double free
- * NOTE: use valgrind to see memory errors
+ * Not coredump
+ * use extern, only has one copy of global var
  */
 
 int main(int argc, char **argv)
