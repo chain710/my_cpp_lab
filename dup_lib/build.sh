@@ -31,7 +31,8 @@ ar rcs libmy_string_static.a my_string.o
 g++ -g -Wall -fPIC -c -o midware.o midware.cc  -I./
 g++ -g -Wall -shared -o libmidware.so  midware.o -lmy_string_static -L./
 
-g++ -g -Wall -o case3.out case3.cc -lmy_string -lmidware -I./ -L./
+g++ -g -Wall -o case3.1.out case3.cc -lmidware -lmy_string -I./ -L./
+g++ -g -Wall -o case3.2.out case3.cc -lmy_string -lmidware -I./ -L./
 
 cd $DIRNAME/case4
 
@@ -86,6 +87,5 @@ g++ -g -Wall -fPIC -c -o midware.o midware.cc  -I./
 g++ -g -Wall -shared -o libmidware.so  midware.o -lmy_string_static -L./
 g++ -g -Wall -shared -o libmidware_plugin.so  midware.o -lmy_string -L./
 
-#put -lmy_string_static before -lmidware will cause coredump!
-#g++ -g -Wall -o case9.out case9.cc -lmy_string_static -lmidware  -ldl -I./ -L./
-g++ -g -Wall -o case9.out case9.cc -lmidware -lmy_string_static  -ldl -I./ -L./
+g++ -g -Wall -o case9.1.out case9.cc -lmidware -lmy_string_static  -ldl -I./ -L./
+g++ -g -Wall -o case9.2.out case9.cc -lmy_string_static -lmidware  -ldl -I./ -L./

@@ -15,6 +15,7 @@ int main(int argc, char **argv)
     return -1;
   }
 
+  printf("Ready to dlopen!\n");
   for (int i = 1; i < argc; ++i) {
     void *dl_handler = dlopen(argv[i], RTLD_NOW);
     if (NULL == dl_handler) {

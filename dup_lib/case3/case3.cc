@@ -3,7 +3,7 @@
 /*
  * this case MAY coredump
  * libmidware link against static lib
- * case6.out link against libmidware & libmy_string(dynamic)
+ * case3.out link against libmidware & libmy_string(dynamic)
  * init 2 global in same address
  */
 
